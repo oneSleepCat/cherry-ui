@@ -1,0 +1,88 @@
+.cherry-btn {
+  // 布局
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+
+  // 盒模型
+  // padding: $btn-padding-y $btn-padding-x;
+  border: $btn-border-width solid transparent;
+  // border-radius: $btn-border-radius;
+
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
+
+  // 尺寸
+  // font-size: $btn-font-size;
+  line-height: $btn-line-height;
+
+  // 文本
+  font-weight: $btn-font-weight;
+  text-align: center;
+  white-space: nowrap;
+  color: $body-color;
+
+  // 视觉效果
+  background-image: none;
+  box-shadow: $btn-box-shadow;
+
+  // 交互性
+  cursor: pointer;
+  transition: $btn-transition;
+
+  &.disabled,
+  &[disabled] {
+    // 视觉效果
+    opacity: $btn-disabled-opacity;
+    box-shadow: none;
+
+    // 交互性
+    cursor: not-allowed;
+
+    > * {
+      pointer-events: none;
+    }
+  }
+}
+
+.cherry-btn-lg {
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+}
+
+.cherry-btn-sm {
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+}
+
+.cherry-btn-primary {
+  @include border-style($primary, $primary, $white);
+}
+
+.cherry-btn-danger {
+  @include border-style($danger, $danger, $white);
+}
+
+.cherry-btn-default {
+  @include border-style($border-color, $white, $body-color);
+}
+
+.cherry-btn-link {
+  font-weight: $font-weight-normal;
+  color: $btn-link-color;
+  text-decoration: $link-decoration;
+  box-shadow: none;
+  &:hover,
+  &:focus,
+  &.focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+  &.disabled,
+  &[disabled] {
+    color: $btn-link-disabled-color;
+    pointer-events: none;
+  }
+
+  // &:focus,
+  // &.focus {
+  //   text-decoration: $link-hover-decoration;
+  // }
+}

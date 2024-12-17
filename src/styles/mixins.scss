@@ -1,0 +1,46 @@
+@use "sass:color";
+// 全局 mixins
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-size($padding-y, $padding-x, $font-size, $border-radius) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  border-radius: $border-radius;
+}
+
+@mixin border-style($border-color, $background-color, $color) {
+  color: $color;
+  background-color: $background-color;
+  border-color: $border-color;
+  &:hover,
+  &:focus,
+  &.focus {
+    color: color.adjust($color, $lightness: 7.5%);
+    background-color: color.adjust($background-color, $lightness: 7.5%);
+    border-color: color.adjust($border-color, $lightness: 7.5%);
+  }
+  &.disabled,
+  &[disabled] {
+    color: $color;
+    background-color: $background-color;
+    border-color: $border-color;
+  }
+}
+
+@mixin alert-style($background-color, $border-color, $color) {
+  color: $color;
+  background-color: $background-color;
+  border-color: $border-color;
+}
