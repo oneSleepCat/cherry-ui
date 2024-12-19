@@ -3,15 +3,22 @@
 // import Alert from "@/components/Alert";
 import Menu from "./components/Menu/Menu";
 import MenuItem from "./components/MenuItem/MenuItem";
+import SubMenu from './components/SubMenu/SubMenu';
 
 function App() {
   return (
     <>
       <Menu defaultIndex={1}>
-        <MenuItem index={0}>苹果</MenuItem>
-        <MenuItem index={1}>香蕉</MenuItem>
-        <MenuItem index={2}>葡萄</MenuItem>
+        <MenuItem disabled>苹果</MenuItem>
+        <MenuItem>香蕉</MenuItem>
+        <MenuItem>葡萄</MenuItem>
+        <SubMenu title='测试' className="test">葡萄</SubMenu>
       </Menu>
+      {/* <Menu defaultIndex={1} mode={'vertical'}>
+        <MenuItem disabled>苹果</MenuItem>
+        <MenuItem>香蕉</MenuItem>
+        <MenuItem>葡萄</MenuItem>
+      </Menu> */}
     </>
   );
 

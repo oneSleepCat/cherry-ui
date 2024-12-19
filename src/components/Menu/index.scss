@@ -1,0 +1,13 @@
+.cherry-menu {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  box-shadow: $menu-box-shadow;
+  &.menu-horizontal {
+    flex-direction: row;
+  }
+  &.menu-vertical {
+    flex-direction: column;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,53 @@
+.cherry-menu-item {
+  position: relative;
+  padding: $menu-item-padding-y $menu-item-padding-x;
+  cursor: pointer;
+  transition: $menu-transition;
+
+  &-vertical {
+    margin: $menu-item-margin-x $menu-item-margin-y;
+    border-radius: $menu-item-border-radius;
+    &:hover {
+      color: $body-color;
+      background-color: #efefef;
+    }
+    &.is-active {
+      color: $menu-item-active-color;
+      background-color: #e6f4ff;
+    }
+    &.is-active,
+    &:hover {
+      &::after {
+        display: none !important;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &.is-active {
+    color: $menu-item-active-color;
+  }
+  &.is-active,
+  &:hover {
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: $menu-item-padding-x;
+      right: $menu-item-padding-x;
+      bottom: 0;
+      border-bottom: $menu-item-active-border-width solid
+        $menu-item-active-color;
+    }
+  }
+
+  &.is-disabled {
+    color: $menu-item-disabled-color;
+    pointer-events: none;
+    cursor: default;
+  }
+}

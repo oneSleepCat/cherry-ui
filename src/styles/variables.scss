@@ -221,9 +221,12 @@ $menu-transition:              color .15s ease-in-out, border-color .15s ease-in
 // menu-item
 $menu-item-padding-y:          .5rem !default;
 $menu-item-padding-x:          1rem !default;
+$menu-item-margin-x:           4px;
+$menu-item-margin-y:           4px;
 $menu-item-active-color:       $primary !default;
 $menu-item-active-border-width: 2px !default;
 $menu-item-disabled-color:     $gray-600 !default;
+$menu-item-border-radius:       8px;
 
 //sub-menu
 //submenu
