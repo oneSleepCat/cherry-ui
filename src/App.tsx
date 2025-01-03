@@ -3,16 +3,19 @@
 // import Alert from "@/components/Alert";
 import Menu from "./components/Menu/Menu";
 import MenuItem from "./components/MenuItem/MenuItem";
-import SubMenu from './components/SubMenu/SubMenu';
+import SubMenu from "./components/SubMenu/SubMenu";
 
 function App() {
   return (
     <>
-      <Menu defaultIndex={1}>
+      <Menu defaultIndex={'1'} trigger="hover" defaultOpenSubMenus={['3']}>
         <MenuItem disabled>苹果</MenuItem>
         <MenuItem>香蕉</MenuItem>
         <MenuItem>葡萄</MenuItem>
-        <SubMenu title='测试' className="test">葡萄</SubMenu>
+        <SubMenu title="测试" className="test">
+          <MenuItem>香蕉</MenuItem>
+          <MenuItem>葡萄</MenuItem>
+        </SubMenu>
       </Menu>
       {/* <Menu defaultIndex={1} mode={'vertical'}>
         <MenuItem disabled>苹果</MenuItem>

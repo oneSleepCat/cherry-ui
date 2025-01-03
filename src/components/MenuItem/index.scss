@@ -3,6 +3,7 @@
   padding: $menu-item-padding-y $menu-item-padding-x;
   cursor: pointer;
   transition: $menu-transition;
+  color: $body-color;
 
   &-vertical {
     margin: $menu-item-margin-x $menu-item-margin-y;

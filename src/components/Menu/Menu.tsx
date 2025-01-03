@@ -5,17 +5,29 @@ import { MenuProps, MenuContextProps } from "./type";
 import "./index.scss";
 
 export const MenuContext = createContext<MenuContextProps>({
-  index: 0,
+  index: "0",
   mode: "horizontal",
+  defaultOpenSubMenus: [],
 });
 
 const defaultProps = {
-  defaultIndex: 0,
+  defaultIndex: "0",
   mode: "horizontal",
+  trigger: "hover",
+  defaultOpenSubMenus: [],
 };
 
 const Menu: React.FC<MenuProps> = (props) => {
-  const { defaultIndex, className, style, mode, children, onSelect } = {
+  const {
+    defaultIndex,
+    className,
+    style,
+    mode,
+    trigger,
+    defaultOpenSubMenus,
+    children,
+    onSelect,
+  } = {
     ...defaultProps,
     ...props,
   };
@@ -27,7 +39,7 @@ const Menu: React.FC<MenuProps> = (props) => {
     "menu-vertical": mode === "vertical",
   });
 
-  const handleClick = (index: number) => {
+  const handleClick = (index: string) => {
     setActiveIndex(index);
     onSelect?.(index);
   };
@@ -38,11 +50,11 @@ const Menu: React.FC<MenuProps> = (props) => {
         child as React.FunctionComponentElement<MenuItemProps>;
       const { displayName } = childrenElment.type;
 
-      if (displayName === "MenuItem" || displayName === 'SubMenu') {
+      if (displayName === "MenuItem" || displayName === "SubMenu") {
         return React.cloneElement(childrenElment, {
           index: childrenElment.props.index
             ? childrenElment.props.index
-            : index,
+            : index.toString(),
         });
       }
       console.error("Menu has a child which is not a MenuItem");
@@ -51,7 +63,13 @@ const Menu: React.FC<MenuProps> = (props) => {
 
   return (
     <MenuContext.Provider
-      value={{ index: activeIndex, mode, onSelect: handleClick }}
+      value={{
+        index: activeIndex,
+        mode,
+        trigger,
+        defaultOpenSubMenus,
+        onSelect: handleClick,
+      }}
     >
       <ul className={classes} style={style}>
         {renderChildren()}
