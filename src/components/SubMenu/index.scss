@@ -1,6 +1,30 @@
 .cherry-submenu {
+  &.is-vertical {
+    margin: 4px;
+    &::after{
+      border-bottom: none !important;
+    }
+    .cherry-submenu-icon {
+      transform: rotate(0deg) !important;
+    }
+  }
+  &.is-vertical.is-opened {
+    .cherry-submenu-icon {
+      transform: rotate(180deg) !important;
+    }
+  }
+  .cherry-submenu-title {
+    .cherry-submenu-icon {
+      margin-left: 8px;
+      transition: transform .25s ease-in-out;
+    }
+    &:hover {
+      .cherry-submenu-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
   .cherry-submenu-container {
-    display: block;
     position: absolute;
     top: 100%;
     min-width: 160px;

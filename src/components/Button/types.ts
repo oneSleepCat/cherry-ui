@@ -1,16 +1,5 @@
-export enum ButtonType {
-  Primary = "primary",
-  Default = "default",
-  Danger = "danger",
-  Link = "link",
-}
+export type ButtonType = 'primary' | 'default' | 'danger' | 'link';
 
-export enum ButtonSize {
-  Large = "lg",
-  Small = "sm",
-}
+export type ButtonSize = 'lg' | 'sm';
 
-export enum ButtonShape {
-  Round = "round",
-  Square = "square",
-}
+export type ButtonShape = 'round' | 'square';

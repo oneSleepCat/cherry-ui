@@ -29,9 +29,6 @@
     text-decoration: none;
   }
 
-  &.is-active {
-    color: $menu-item-active-color;
-  }
   &.is-active,
   &:hover {
     &::after {
@@ -44,6 +41,7 @@
       border-bottom: $menu-item-active-border-width solid
         $menu-item-active-color;
     }
+    color: $menu-item-active-color;
   }
 
   &.is-disabled {

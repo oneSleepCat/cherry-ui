@@ -25,8 +25,8 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 
 const defaultProps = {
   disabled: false,
-  btnType: ButtonType.Default,
-  size: ButtonSize.Small,
+  btnType: 'default',
+  size: 'small',
 };
 
 const Button: React.FC<BaseButtonProps> = (props: ButtonProps) => {
@@ -48,10 +48,10 @@ const Button: React.FC<BaseButtonProps> = (props: ButtonProps) => {
     [`cherry-btn-${btnType}`]: btnType,
     [`cherry-btn-${size}`]: size,
     [`cherry-btn-${shape}`]: shape,
-    disabled: btnType === ButtonType.Link && disabled,
+    disabled: btnType === 'link' && disabled,
   });
 
-  if (btnType === ButtonType.Link && href) {
+  if (btnType === 'link' && href) {
     return (
       <a href={href} className={classes} target="_blank" {...restProps}>
         {children}

@@ -1,14 +1,21 @@
 // import Button from "./components/Button";
 // import { ButtonType, ButtonSize } from "./components/Button/types";
 // import Alert from "@/components/Alert";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 import Menu from "./components/Menu/Menu";
 import MenuItem from "./components/MenuItem/MenuItem";
 import SubMenu from "./components/SubMenu/SubMenu";
+import Icon from "./components/Icon/Icon";
+
+// 注册图标
+library.add(fas);
 
 function App() {
   return (
     <>
-      <Menu defaultIndex={'1'} trigger="hover" defaultOpenSubMenus={['3']}>
+      {/* <Icon icon='arrow-down' size="10x" className="test" theme="danger" /> */}
+      <Menu defaultIndex={'1'} trigger="hover">
         <MenuItem disabled>苹果</MenuItem>
         <MenuItem>香蕉</MenuItem>
         <MenuItem>葡萄</MenuItem>
